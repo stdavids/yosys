@@ -39,6 +39,11 @@
 #include "frontends/verilog/verilog_frontend.h"
 #include "kernel/log.h"
 
+// BSG-STD: YYMAXDEPTH controls the max depths of the parser stack size. If
+// this is too small, you will get an error that says "memory exhausted". By
+// default (ie. when not defined) the value of YYMAXDEPTH is 10000.
+#define YYMAXDEPTH 12500
+
 USING_YOSYS_NAMESPACE
 using namespace AST;
 using namespace VERILOG_FRONTEND;
